@@ -1,4 +1,4 @@
-# hjson-js
+# HJSON
 
 an [HJSON](https://hjson.github.io/) compatible parser and encoder
 
