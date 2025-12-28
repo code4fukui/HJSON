@@ -25,12 +25,13 @@ class Parser {
       }
       return true;
     }
+    //throw new Error("EOF");
     return false;
   }
 
   skipWhitespace() {
     while (this.ch === " " || this.ch === "\t" || this.ch === "\n" || this.ch === "\r") {
-      this.nextChar();
+      if (!this.nextChar()) throw new Error("fail");
     }
     // Skip comments
     while (this.ch === "#" || (this.ch === "/" && (this.text[this.pos] === "/" || this.text[this.pos] === "*"))) {
@@ -58,7 +59,7 @@ class Parser {
 
   parseValue() {
     this.skipWhitespace();
-
+    
     switch (this.ch) {
       case "{":
         return this.parseObject();
@@ -298,6 +299,7 @@ class Parser {
       str += this.ch;
       this.nextChar();
     }
+    //if (str == "") throw new Error("can't parse");
     return str.trim();
   }
 

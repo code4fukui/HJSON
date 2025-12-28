@@ -8,14 +8,9 @@ Deno.test("all", async () => {
   for (const item of tests) {
     console.log(item);
     const src = await Deno.readTextFile(item);
-    if (item.indexOf("test") >= 0) {
-      //if (item == "test/assets/failStr8a_test.hjson") continue;
-      //if (item == "test/assets/charset_test.hjson") continue;
-      console.log(src);
-      const obj = HJSON.parse(src);
-      console.log(obj)
-      //t.assert(obj != null);
-    } else if (item.indexOf("fail") >= 0) {
+    if (item.indexOf("_test") >= 0) {
+    //if (item.indexOf("/fail") >= 0) {
+      //continue; // t.assertThrows(() => HJSON.parse(src));
       t.assertThrows(() => HJSON.parse(src));
     } else {
       const chk = await Deno.readTextFile(EXT.set(item, "json"));
