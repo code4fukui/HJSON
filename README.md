@@ -23,4 +23,4 @@ console.log(s2);
 
 ## License
 
-See [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE).
