@@ -1,10 +1,8 @@
 # HJSON
 
-> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+[HJSON](https://hjson.github.io/) 互換のパーサーおよびエンコーダーです。
 
-An [HJSON](https://hjson.github.io/) compatible parser and encoder.
-
-## Usage
+## 使い方
 
 ```js
 import { HJSON } from "https://code4fukui.github.io/HJSON/HJSON.js";
@@ -21,6 +19,6 @@ const s2 = HJSON.stringify(obj);
 console.log(s2);
 ```
 
-## License
+## ライセンス
 
-MIT License — see [LICENSE](LICENSE).
+MIT License — 詳細は [LICENSE](LICENSE) を参照してください。
